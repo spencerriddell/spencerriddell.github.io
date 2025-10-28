@@ -1,11 +1,14 @@
 ---
-title: "NY NOAA Weather Dashboard"
+title: "NY NOAA Weather Dashboard (Static)"
+params:
+  station: "auto"   # "auto" picks the station with most records; or set a GHCND ID like "USW00094728"
+  years: [1995, 2005]   # initial subset for file size; adjust as you like
+  sample_n: 10000       # scatter downsample size
 output:
   flexdashboard::flex_dashboard:
     orientation: rows
     vertical_layout: fill
     theme: cosmo
-runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
@@ -14,7 +17,6 @@ library(plotly)
 library(dplyr)
 library(tidyr)
 library(lubridate)
-library(purrr)
 library(stringr)
 library(p8105.datasets)
 library(viridisLite)
@@ -37,39 +39,28 @@ weather <- ny_noaa %>%
     snwd_mm = as.numeric(snwd)
   )
 
-station_choices <- sort(unique(weather$id))
-year_range <- range(weather$year, na.rm = TRUE)
+# Choose station
 top_station <- weather %>% count(id, sort = TRUE) %>% slice(1) %>% pull(id)
+station_id <- if (identical(params$station, "auto")) top_station else params$station
+
+# Year subset (optional, keeps file size manageable)
+yr_min <- params$years[[1]]
+yr_max <- params$years[[2]]
+weather_sta <- weather %>%
+  filter(id == station_id, between(year, yr_min, yr_max))
 
 # Palettes
 palette_month <- viridis(12, option = "D") # for discrete months
 palette_lines <- c("Tmax (°C)" = "#e45756", "Tmin (°C)" = "#4c78a8")
 ```
 
-Sidebar {.sidebar}
 -----------------------------------------------------------------------
 
-```{r}
-selectizeInput(
-  "station", "Weather station (GHCND ID)",
-  choices  = station_choices,
-  selected = top_station,
-  options  = list(placeholder = "Type to search station ID")
-)
+### About this dashboard
 
-sliderInput(
-  "years", "Year range",
-  min = year_range[1], max = year_range[2],
-  value = c(max(year_range[1], 1995), min(year_range[2], 2005)),
-  sep = ""
-)
-
-numericInput(
-  "sample_n", "Scatter sample size (points)", value = 10000, min = 1000, max = 100000, step = 1000
-)
-
-helpText("Notes: Temperatures in °C; precipitation in mm. Missing values are dropped per-plot.")
-```
+- Dataset: NY NOAA (1981–2010) from the p8105.datasets package  
+- Station: `r station_id`  
+- Years shown: `r paste(yr_min, yr_max, sep = "–")`  
 
 Row {data-height=450}
 -----------------------------------------------------------------------
@@ -77,69 +68,61 @@ Row {data-height=450}
 ### Tmax vs Tmin (scatter) — sampled days
 
 ```{r}
-renderPlotly({
-  req(input$station, input$years)
-  df <- weather %>%
-    filter(id == input$station, between(year, input$years[1], input$years[2])) %>%
-    filter(!is.na(tmax_c), !is.na(tmin_c))
+# Sample to keep widget responsive/file size reasonable
+df_scatter <- weather_sta %>%
+  filter(!is.na(tmax_c), !is.na(tmin_c)) %>%
+  { 
+    n <- nrow(.); if (n > params$sample_n) dplyr::slice_sample(., n = params$sample_n) else .
+  }
 
-  n <- min(nrow(df), input$sample_n)
-  if (n > 0) df <- df %>% slice_sample(n = n)
+rng <- range(c(df_scatter$tmin_c, df_scatter$tmax_c), na.rm = TRUE)
 
-  p <- plot_ly(
-    df,
-    x = ~tmin_c, y = ~tmax_c,
-    type = "scatter", mode = "markers",
-    color = ~month, colors = palette_month,
-    text = ~paste("Date:", date, "<br>Month:", month),
-    hoverinfo = "text",
-    marker = list(size = 6, opacity = 0.5, line = list(width = 0))
-  ) %>%
-    layout(
-      xaxis = list(title = "Daily minimum temperature (°C)"),
-      yaxis = list(title = "Daily maximum temperature (°C)")
-    )
-
-  # Add y = x reference line
-  rng <- range(c(df$tmin_c, df$tmax_c), na.rm = TRUE)
-  p %>% layout(shapes = list(list(
-    type = "line", x0 = rng[1], y0 = rng[1], x1 = rng[2], y1 = rng[2],
-    line = list(color = "gray", dash = "dash")
-  )))
-})
+plot_ly(
+  df_scatter,
+  x = ~tmin_c, y = ~tmax_c,
+  type = "scatter", mode = "markers",
+  color = ~month, colors = palette_month,
+  text = ~paste("Date:", date, "<br>Month:", month),
+  hoverinfo = "text",
+  marker = list(size = 6, opacity = 0.5, line = list(width = 0))
+) %>%
+  layout(
+    xaxis = list(title = "Daily minimum temperature (°C)"),
+    yaxis = list(title = "Daily maximum temperature (°C)"),
+    shapes = list(list(
+      type = "line", x0 = rng[1], y0 = rng[1], x1 = rng[2], y1 = rng[2],
+      line = list(color = "gray", dash = "dash")
+    ))
+  )
 ```
 
 ### Monthly mean temperatures (line)
 
 ```{r}
-renderPlotly({
-  req(input$station, input$years)
-  df <- weather %>%
-    filter(id == input$station, between(year, input$years[1], input$years[2])) %>%
-    group_by(year, month) %>%
-    summarize(
-      tmax_c = mean(tmax_c, na.rm = TRUE),
-      tmin_c = mean(tmin_c, na.rm = TRUE),
-      .groups = "drop"
-    ) %>%
-    pivot_longer(c(tmax_c, tmin_c), names_to = "var", values_to = "value") %>%
-    mutate(
-      var = recode(var, tmax_c = "Tmax (°C)", tmin_c = "Tmin (°C)"),
-      var = factor(var, levels = names(palette_lines)),
-      ym = as.Date(paste(year, as.integer(month), "01", sep = "-"))
-    )
+df_monthly_temp <- weather_sta %>%
+  group_by(year, month) %>%
+  summarize(
+    tmax_c = mean(tmax_c, na.rm = TRUE),
+    tmin_c = mean(tmin_c, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  pivot_longer(c(tmax_c, tmin_c), names_to = "var", values_to = "value") %>%
+  mutate(
+    var = recode(var, tmax_c = "Tmax (°C)", tmin_c = "Tmin (°C)"),
+    var = factor(var, levels = names(palette_lines)),
+    ym = as.Date(paste(year, as.integer(month), "01", sep = "-"))
+  )
 
-  plot_ly(df, x = ~ym, y = ~value, color = ~var, colors = palette_lines,
-          type = "scatter", mode = "lines+markers",
-          hovertemplate = paste(
-            "Month: %{x|%b %Y}<br>",
-            "%{trace.name}: %{y:.1f}°C<extra></extra>"
-          )) %>%
-    layout(
-      xaxis = list(title = "Month"),
-      yaxis = list(title = "Mean temperature (°C)")
-    )
-})
+plot_ly(df_monthly_temp, x = ~ym, y = ~value, color = ~var, colors = palette_lines,
+        type = "scatter", mode = "lines+markers",
+        hovertemplate = paste(
+          "Month: %{x|%b %Y}<br>",
+          "%{trace.name}: %{y:.1f}°C<extra></extra>"
+        )) %>%
+  layout(
+    xaxis = list(title = "Month", rangeslider = list(visible = TRUE)),
+    yaxis = list(title = "Mean temperature (°C)")
+  )
 ```
 
 Row {data-height=480}
@@ -148,58 +131,49 @@ Row {data-height=480}
 ### Temperature by month (boxplot)
 
 ```{r}
-renderPlotly({
-  req(input$station, input$years)
-  df <- weather %>%
-    filter(id == input$station, between(year, input$years[1], input$years[2])) %>%
-    filter(!is.na(tmax_c))
+df_box <- weather_sta %>%
+  filter(!is.na(tmax_c))
 
-  plot_ly(df, x = ~month, y = ~tmax_c, type = "box",
-          boxpoints = "outliers", jitter = 0, pointpos = 0,
-          marker = list(opacity = 0.4),
-          hovertemplate = "Month: %{x}<br>Tmax: %{y:.1f}°C<extra></extra>") %>%
-    layout(
-      xaxis = list(title = "Month"),
-      yaxis = list(title = "Daily max temperature (°C)")
-    )
-})
+plot_ly(df_box, x = ~month, y = ~tmax_c, type = "box",
+        boxpoints = "outliers", jitter = 0, pointpos = 0,
+        marker = list(opacity = 0.4),
+        hovertemplate = "Month: %{x}<br>Tmax: %{y:.1f}°C<extra></extra>") %>%
+  layout(
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Daily max temperature (°C)")
+  )
 ```
 
 ### Monthly precipitation (bar)
 
 ```{r}
-renderPlotly({
-  req(input$station, input$years)
-  df <- weather %>%
-    filter(id == input$station, between(year, input$years[1], input$years[2])) %>%
-    group_by(year, month) %>%
-    summarize(
-      total_prcp_mm = sum(prcp_mm, na.rm = TRUE),
-      wet_days = sum(prcp_mm > 0, na.rm = TRUE),
-      .groups = "drop"
-    ) %>%
-    mutate(ym = as.Date(paste(year, as.integer(month), "01", sep = "-")))
+df_prcp <- weather_sta %>%
+  group_by(year, month) %>%
+  summarize(
+    total_prcp_mm = sum(prcp_mm, na.rm = TRUE),
+    wet_days = sum(prcp_mm > 0, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(ym = as.Date(paste(year, as.integer(month), "01", sep = "-")))
 
-  # Bars: total precipitation; line: wet day count (secondary axis simulated via scale)
-  prcp_max <- max(df$total_prcp_mm, na.rm = TRUE)
-  wet_max  <- max(df$wet_days, na.rm = TRUE)
-  scale    <- ifelse(wet_max > 0, prcp_max / wet_max, 1)
+prcp_max <- max(df_prcp$total_prcp_mm, na.rm = TRUE)
+wet_max  <- max(df_prcp$wet_days, na.rm = TRUE)
+scale    <- ifelse(wet_max > 0, prcp_max / wet_max, 1)
 
-  plot_ly(df, x = ~ym, y = ~total_prcp_mm, type = "bar",
-          name = "Total precipitation (mm)", marker = list(color = "#59a14f"),
-          hovertemplate = "Month: %{x|%b %Y}<br>Total prcp: %{y:.0f} mm<extra></extra>") %>%
-    add_trace(y = ~wet_days * scale, type = "scatter", mode = "lines+markers",
-              name = "Wet days (count, scaled)", yaxis = "y2",
-              line = list(color = "#f28e2b"),
-              hovertemplate = "Month: %{x|%b %Y}<br>Wet days: %{text}<extra></extra>",
-              text = ~wet_days) %>%
-    layout(
-      barmode = "overlay",
-      xaxis = list(title = "Month"),
-      yaxis = list(title = "Total precipitation (mm)"),
-      yaxis2 = list(overlaying = "y", side = "right", showgrid = FALSE,
-                    title = "Wet days (count, scaled)"),
-      legend = list(orientation = "h")
-    )
-})
+plot_ly(df_prcp, x = ~ym, y = ~total_prcp_mm, type = "bar",
+        name = "Total precipitation (mm)", marker = list(color = "#59a14f"),
+        hovertemplate = "Month: %{x|%b %Y}<br>Total prcp: %{y:.0f} mm<extra></extra>") %>%
+  add_trace(y = ~wet_days * scale, type = "scatter", mode = "lines+markers",
+            name = "Wet days (count, scaled)", yaxis = "y2",
+            line = list(color = "#f28e2b"),
+            hovertemplate = "Month: %{x|%b %Y}<br>Wet days: %{text}<extra></extra>",
+            text = ~wet_days) %>%
+  layout(
+    barmode = "overlay",
+    xaxis = list(title = "Month", rangeslider = list(visible = TRUE)),
+    yaxis = list(title = "Total precipitation (mm)"),
+    yaxis2 = list(overlaying = "y", side = "right", showgrid = FALSE,
+                  title = "Wet days (count, scaled)"),
+    legend = list(orientation = "h")
+  )
 ```
