@@ -1,5 +1,5 @@
 ---
-title: "NY NOAA Weather Dashboard (Static)"
+title: "NY NOAA Weather Dashboard"
 params:
   station: "auto"   # "auto" picks the station with most records; or set a GHCND ID like "USW00094728"
   years: [1995, 2005]   # initial subset for file size; adjust as you like
