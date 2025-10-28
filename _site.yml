@@ -1,0 +1,24 @@
+name: "Spencer Willow Riddell"
+output_dir: "."
+navbar:
+  title: "Spencer Willow Riddell"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Resume"
+      href: resume.html
+    - text: "Homeworks"
+      href: homeworks.html
+  right:
+    - text: "GitHub"
+      href: "https://github.com/spencerriddell"
+    - text: "Email"
+      href: "mailto:swr2118@cumc.columbia.edu"
+    - text: "LinkedIn"
+      href: "https://www.linkedin.com/in/spencer-w-riddell"
+output:
+  html_document:
+    theme: cosmo
+    highlight: tango
+    toc: false
+    self_contained: false

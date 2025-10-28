@@ -1,0 +1,180 @@
+---
+title: "Resume · Spencer Willow Riddell"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+# Spencer Willow Riddell
+
+MPH Candidate '26, B.Sc (Honours) '24  
+Email: <swr2118@cumc.columbia.edu> · Phone: 2264485067 · Pronouns: she/her/elle  
+GitHub: <https://github.com/spencer-w-riddell> · LinkedIn: replace with your URL
+
+## EDUCATION
+
+### Columbia University Mailman School of Public Health
+Master of Public Health — Epidemiology  
+
+GPA: 3.90  
+Certificate: Applied Biostatistics and Public Health Data Science  
+Coursework: Statistics, Epidemiological Theory, Cancer Epidemiology, Clinical Epidemiology, Data Science  
+
+09/2024 – 05/2026 · New York City, NY, USA
+
+### McGill University
+Honours Bachelor of Science — Pharmacology and Therapeutics  
+
+GPA: 3.88  
+Coursework: Drug Design and Development, Neuroscience, Biochemistry, Physiology, Human Anatomy, Organic Chemistry, Statistics and Calculus  
+Graduated with First Class Honours and Distinction.  
+VP Internal of Pharmacology Integrative League of Students (PILS).  
+
+09/2020 – 05/2024 · Montréal, Québec, Canada
+
+## PROFESSIONAL EXPERIENCE
+
+### Columbia University Mailman School of Public Health — Teaching Assistant, Research Methods and Applications
+
+08/2025 – Present · New York City, NY, USA  
+
+- Teach weekly lab sessions that serve as the primary instruction and hands-on synthesis section of the ReMA course.  
+- Pilot homeworks and labs.  
+- Grade 24 students’ weekly homeworks and labs, as well as midterms and finals.  
+- Skills: Teaching, Statistics
+
+### New York City Department of Health and Mental Hygiene — HRTP Intern, Data Communications Unit (Bureau of Epidemiological Services)
+
+06/2025 – Present · New York City, NY, USA  
+
+- Prepare large survey datasets (YRBS 2021, 2023) for publication on EpiQuery for public epidemiological use.  
+- Streamline data processing through modernized SAS macros and Python programs.  
+- Attend weekly professional development seminars in broad public health and career development topics.  
+- Skills: SAS, SUDAAN, R, Python, SQL, GitHub, Statistics, Data Architecture
+
+### ICAP at Columbia University — Bronx Prevention Site — Student Researcher, HPTN094
+
+01/2025 – Present · New York City, NY, USA  
+
+- Evaluate role of housing status on outcomes measured in the HPTN094 multi-site study.  
+- Work under Dr. Ellen Morrison and Dr. Rashaunna Redd.  
+- Skills: SAS, Manuscript Writing, Literature Review, Statistics
+
+### Columbia University Department of Pharmacology — Lab Administrator, Cory Abate-Shen Lab
+
+01/2025 – 04/2025 · New York City, NY, USA  
+
+- Handled administrative tasks for Dr. Abate-Shen.  
+- Organized and updated lab order forms.  
+- Managed student and PI travel requests and reimbursements.  
+- Participated in grant writing.  
+- Skills: Grant Writing, Organization, Administration, Microsoft Office
+
+### McGill University Health Centre — Honours Student Researcher, TAKE IT TOO
+
+08/2023 – 05/2024 · Montréal, Québec, Canada  
+
+- Project: Challenges in Small Sample Size Pediatric Clinical Trials — Lessons Learned from the TAKE IT TOO Study.  
+- Analyzed results through different models using SAS to calculate ICC and observed effect size.  
+- Cleaned and summarized repeated measures data using MATLAB and R.  
+- Wrote manuscript detailing statistical methods for small sample size clinical trials in rare populations.  
+- Worked under Dr. Bethany Joy Foster.  
+- Skills: SAS, R, MATLAB, Manuscript Writing, Literature Review, Statistics, Clinical Trials
+
+### McGill University — Department of Physiology — Student Researcher, Reza Sharif Lab
+
+09/2023 – 08/2024 · Montréal, Québec, Canada  
+
+- Autonomously studied cryopreservation of the nervous system in collaboration with BioChoric (Summer 2024).  
+- Employed machine-learning tools such as DeepLabCut to study mouse gait patterns in osteoarthritis (Fall 2023).  
+- Developed lab website.  
+- Worked under Dr. Reza Sharif (Summer 2024, Fall 2023) and Dr. Alice Gilbert (Fall 2023).  
+- Skills: Wet Lab, Human Sample Handling, Mouse Dissection, Front-End Web Design, UX, Machine Learning
+
+### Jewish General Hospital — Lady Davis Institute — Student Researcher, Ivan Topisirovic Lab
+
+01/2023 – 07/2023 · Montréal, Québec, Canada
+
+- Designed CRISPR-Cas9 edited cell lines for experimentation.  
+- Prepared cell cultures of U2-OS cells for CK2 inhibitor testing.  
+- Skills: Wet Lab
+
+### McGill University — Department of Physics — TEAM Member, PHYS101
+
+2023 · Montréal, Québec, Canada  
+
+- Taught 15–20 student tutorial sessions that synthesized weekly course material through a multi-question problem set.  
+- Worked under Prof. Lilian Childress.  
+- Skills: Teaching, Physics (Mechanics)
+
+### McGill University Sport Medicine Clinic — Front Desk Receptionist
+
+12/2022 – 08/2024 · Montréal, Québec, Canada  
+
+- Coordinated scheduling for physiotherapists, doctors, surgeons, osteopaths, and massage therapists in a fast-paced, client-oriented atmosphere.  
+- Helped organize varsity medical services.  
+- Handled client payments and face-to-face interactions, phone calls, and patient questionnaires.  
+- Skills: Organization, Administration, Customer Service, Teamwork, HIPAA
+
+### McGill University — Department of Physics — TEAM Member, PHYS102
+
+2022 – 2023 · Montréal, Québec, Canada  
+
+- Taught 15–20 student tutorial sessions that synthesized weekly course material through a multi-question problem set.  
+- Presented at SALTISE 2022 about tutorial efficacy in large courses with Dr. Nik Provotas, Dr. Ken Ragan, and Rebecca Brosseau.  
+- Worked under Dr. Nik Provotas.  
+- Skills: Teaching, Physics (Electrophysics)
+
+### McGill University — Department of Physiology — Student Researcher, Reza Sharif Lab
+
+06/2021 – 05/2023 · Montréal, Québec, Canada  
+
+- Conducted behavioural assays to study the role of TACAN ion channel in osteoarthritis pain.  
+- Performed surgeries and dissections on mice.  
+- Sliced and stained samples through immunohistochemistry.  
+- Worked under Dr. Reza Sharif and Dr. Lise Rabiller.  
+- Skills: Wet Lab, Mouse Handling, Behavioural Assays, Mouse Surgeries, Mouse Dissection
+
+### Schulich School of Music of McGill University — Event Staffer
+
+06/2021 – 01/2023 · Montréal, Québec, Canada  
+
+- Worked with back-of-house staff to host concerts and events at SSoM halls.  
+- Handled public-facing responsibilities such as ticket checks, coat checking, ushering, and accessibility.  
+- Skills: Customer Service, Organization, Teamwork
+
+### Schulich School of Music of McGill University — Communications Assistant
+
+06/2021 – 05/2023 · Montréal, Québec, Canada  
+
+- Managed Instagram, Facebook, YouTube, and LinkedIn for SSoM.  
+- Designed graphics for social media and brochures.  
+- Wrote news and biographical articles for the SSoM website.  
+- Updated SSoM website and calendars.  
+- Skills: Graphic Design, Microsoft Office, Teamwork, Front-End Web Design, UX, Journalism, Social Media
+
+## AWARDS
+
+- Columbia Public Health Scholar — Columbia University Mailman School of Public Health (2024)  
+  Highest-level merit scholarship. Awarded for dedication to and past achievement in public health.
+- Best Oral Presentation — Pharmacology Undergraduate Research Expo 2024 — McGill Department of Pharmacology (2024)  
+  “Challenges in Small Sample Size Cluster Randomized Trials focused on Medication Adherence in Pediatric Transplantation: Insights from the TAKE-IT-TOO Study”
+- Undergraduate Student Research Award — Canadian Institute for Health Research (CIHR), McGill University (2024)  
+  Funded Summer 2024 BioChoric project in the Reza Sharif Lab.
+- Executive of the Year — Science Undergraduate Society of McGill University (2024)  
+  VP Internal of PILS; won Best Social Event and Best Collaborative Event.
+- National Japan Bowl Winner — Japan International Cooperation Centre (JICE) (2019)  
+  2019 National Japan Bowl Winner in London, Ontario, Canada. Kakehashi delegate to Japan (Summer 2019).
+
+## PUBLICATIONS
+
+- Challenges in Small Sample Size Cluster Randomized Trials focused on Medication Adherence in Pediatric Transplantation: Insights from the TAKE-IT-TOO Study  
+  Pediatric Transplantation — First draft accepted for revisions in September 2025.  
+  Authors: Spencer W. Riddell, Robert Platt, Mary Amanda Dew, Annette DeVito Dabbs, Vikas R. Dharnidharka, Bärbel Knäuper, Gillian Mayersohn, Chia Wei Teoh, Véronique Phan, Tom Blydt-Hansen, Jodi Smith, Bethany J. Foster
+
+## LANGUAGES
+
+- English — Native 
+- French — Native

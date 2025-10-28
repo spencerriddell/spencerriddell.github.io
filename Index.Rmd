@@ -1,0 +1,23 @@
+---
+output:
+  html_document:
+    toc: false
+---
+
+# Hi, I'm Spencer.
+
+MPH Candidate (’26) and B.Sc (Honours) (’24). I’m passionate about epidemiology, applied biostatistics, and public health data science.
+
+- Pronouns: she/her/elle  
+- Email: <swr2118@cumc.columbia.edu>  
+- GitHub: <https://github.com/spencerriddell>  
+- LinkedIn: <https://www.linkedin.com/in/spencer-w-riddell>
+- Resume: [View my resume here](spencer_riddell_resume.html)
+
+## About
+
+I’m an MPH candidate in Epidemiology at Columbia (Applied Biostatistics & Public Health Data Science certificate) and a Columbia Public Health Scholar. I build reproducible analytics in SAS, R, Python, and SQL to prepare and analyze population health data. I'm currently publishing NYC survey data on EpiQuery and studying housing and outcomes in ICAP’s HPTN094. Previously, I completed an Honours B.Sc. in Pharmacology at McGill and teach the Research Methods & Applications Lab at Mailman for first year MPH students.
+
+## Homework Assignments
+
+[See P8105 homework assignments here.](homeworks.html)

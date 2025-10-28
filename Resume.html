@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Resume · Spencer Willow Riddell</title>
+
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Spencer Willow Riddell</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="spencer_riddell_resume.html">Resume</a>
+</li>
+<li>
+  <a href="homeworks/index.html">Homeworks</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/spencerriddell">GitHub</a>
+</li>
+<li>
+  <a href="mailto:swr2118@cumc.columbia.edu">Email</a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/spencer-w-riddell">LinkedIn</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Resume · Spencer Willow Riddell</h1>
+
+</div>
+
+
+<div id="spencer-willow-riddell" class="section level1">
+<h1>Spencer Willow Riddell</h1>
+<p>MPH Candidate ’26, B.Sc (Honours) ’24<br />
+Email: <a href="mailto:swr2118@cumc.columbia.edu"
+class="email">swr2118@cumc.columbia.edu</a> · Phone: 2264485067 ·
+Pronouns: she/her/elle<br />
+GitHub: <a href="https://github.com/spencer-w-riddell"
+class="uri">https://github.com/spencer-w-riddell</a> · LinkedIn: replace
+with your URL</p>
+<div id="education" class="section level2">
+<h2>EDUCATION</h2>
+<div id="columbia-university-mailman-school-of-public-health"
+class="section level3">
+<h3>Columbia University Mailman School of Public Health</h3>
+<p>Master of Public Health — Epidemiology</p>
+<p>GPA: 3.90<br />
+Certificate: Applied Biostatistics and Public Health Data Science<br />
+Coursework: Statistics, Epidemiological Theory, Cancer Epidemiology,
+Clinical Epidemiology, Data Science</p>
+<p>09/2024 – 05/2026 · New York City, NY, USA</p>
+</div>
+<div id="mcgill-university" class="section level3">
+<h3>McGill University</h3>
+<p>Honours Bachelor of Science — Pharmacology and Therapeutics</p>
+<p>GPA: 3.88<br />
+Coursework: Drug Design and Development, Neuroscience, Biochemistry,
+Physiology, Human Anatomy, Organic Chemistry, Statistics and
+Calculus<br />
+Graduated with First Class Honours and Distinction.<br />
+VP Internal of Pharmacology Integrative League of Students (PILS).</p>
+<p>09/2020 – 05/2024 · Montréal, Québec, Canada</p>
+</div>
+</div>
+<div id="professional-experience" class="section level2">
+<h2>PROFESSIONAL EXPERIENCE</h2>
+<div
+id="columbia-university-mailman-school-of-public-health-teaching-assistant-research-methods-and-applications"
+class="section level3">
+<h3>Columbia University Mailman School of Public Health — Teaching
+Assistant, Research Methods and Applications</h3>
+<p>08/2025 – Present · New York City, NY, USA</p>
+<ul>
+<li>Teach weekly lab sessions that serve as the primary instruction and
+hands-on synthesis section of the ReMA course.<br />
+</li>
+<li>Pilot homeworks and labs.<br />
+</li>
+<li>Grade 24 students’ weekly homeworks and labs, as well as midterms
+and finals.<br />
+</li>
+<li>Skills: Teaching, Statistics</li>
+</ul>
+</div>
+<div
+id="new-york-city-department-of-health-and-mental-hygiene-hrtp-intern-data-communications-unit-bureau-of-epidemiological-services"
+class="section level3">
+<h3>New York City Department of Health and Mental Hygiene — HRTP Intern,
+Data Communications Unit (Bureau of Epidemiological Services)</h3>
+<p>06/2025 – Present · New York City, NY, USA</p>
+<ul>
+<li>Prepare large survey datasets (YRBS 2021, 2023) for publication on
+EpiQuery for public epidemiological use.<br />
+</li>
+<li>Streamline data processing through modernized SAS macros and Python
+programs.<br />
+</li>
+<li>Attend weekly professional development seminars in broad public
+health and career development topics.<br />
+</li>
+<li>Skills: SAS, SUDAAN, R, Python, SQL, GitHub, Statistics, Data
+Architecture</li>
+</ul>
+</div>
+<div
+id="icap-at-columbia-university-bronx-prevention-site-student-researcher-hptn094"
+class="section level3">
+<h3>ICAP at Columbia University — Bronx Prevention Site — Student
+Researcher, HPTN094</h3>
+<p>01/2025 – Present · New York City, NY, USA</p>
+<ul>
+<li>Evaluate role of housing status on outcomes measured in the HPTN094
+multi-site study.<br />
+</li>
+<li>Work under Dr. Ellen Morrison and Dr. Rashaunna Redd.<br />
+</li>
+<li>Skills: SAS, Manuscript Writing, Literature Review, Statistics</li>
+</ul>
+</div>
+<div
+id="columbia-university-department-of-pharmacology-lab-administrator-cory-abate-shen-lab"
+class="section level3">
+<h3>Columbia University Department of Pharmacology — Lab Administrator,
+Cory Abate-Shen Lab</h3>
+<p>01/2025 – 04/2025 · New York City, NY, USA</p>
+<ul>
+<li>Handled administrative tasks for Dr. Abate-Shen.<br />
+</li>
+<li>Organized and updated lab order forms.<br />
+</li>
+<li>Managed student and PI travel requests and reimbursements.<br />
+</li>
+<li>Participated in grant writing.<br />
+</li>
+<li>Skills: Grant Writing, Organization, Administration, Microsoft
+Office</li>
+</ul>
+</div>
+<div
+id="mcgill-university-health-centre-honours-student-researcher-take-it-too"
+class="section level3">
+<h3>McGill University Health Centre — Honours Student Researcher, TAKE
+IT TOO</h3>
+<p>08/2023 – 05/2024 · Montréal, Québec, Canada</p>
+<ul>
+<li>Project: Challenges in Small Sample Size Pediatric Clinical Trials —
+Lessons Learned from the TAKE IT TOO Study.<br />
+</li>
+<li>Analyzed results through different models using SAS to calculate ICC
+and observed effect size.<br />
+</li>
+<li>Cleaned and summarized repeated measures data using MATLAB and
+R.<br />
+</li>
+<li>Wrote manuscript detailing statistical methods for small sample size
+clinical trials in rare populations.<br />
+</li>
+<li>Worked under Dr. Bethany Joy Foster.<br />
+</li>
+<li>Skills: SAS, R, MATLAB, Manuscript Writing, Literature Review,
+Statistics, Clinical Trials</li>
+</ul>
+</div>
+<div
+id="mcgill-university-department-of-physiology-student-researcher-reza-sharif-lab"
+class="section level3">
+<h3>McGill University — Department of Physiology — Student Researcher,
+Reza Sharif Lab</h3>
+<p>09/2023 – 08/2024 · Montréal, Québec, Canada</p>
+<ul>
+<li>Autonomously studied cryopreservation of the nervous system in
+collaboration with BioChoric (Summer 2024).<br />
+</li>
+<li>Employed machine-learning tools such as DeepLabCut to study mouse
+gait patterns in osteoarthritis (Fall 2023).<br />
+</li>
+<li>Developed lab website.<br />
+</li>
+<li>Worked under Dr. Reza Sharif (Summer 2024, Fall 2023) and Dr. Alice
+Gilbert (Fall 2023).<br />
+</li>
+<li>Skills: Wet Lab, Human Sample Handling, Mouse Dissection, Front-End
+Web Design, UX, Machine Learning</li>
+</ul>
+</div>
+<div
+id="jewish-general-hospital-lady-davis-institute-student-researcher-ivan-topisirovic-lab"
+class="section level3">
+<h3>Jewish General Hospital — Lady Davis Institute — Student Researcher,
+Ivan Topisirovic Lab</h3>
+<p>01/2023 – 07/2023 · Montréal, Québec, Canada</p>
+<ul>
+<li>Designed CRISPR-Cas9 edited cell lines for experimentation.<br />
+</li>
+<li>Prepared cell cultures of U2-OS cells for CK2 inhibitor
+testing.<br />
+</li>
+<li>Skills: Wet Lab</li>
+</ul>
+</div>
+<div id="mcgill-university-department-of-physics-team-member-phys101"
+class="section level3">
+<h3>McGill University — Department of Physics — TEAM Member,
+PHYS101</h3>
+<p>2023 · Montréal, Québec, Canada</p>
+<ul>
+<li>Taught 15–20 student tutorial sessions that synthesized weekly
+course material through a multi-question problem set.<br />
+</li>
+<li>Worked under Prof. Lilian Childress.<br />
+</li>
+<li>Skills: Teaching, Physics (Mechanics)</li>
+</ul>
+</div>
+<div
+id="mcgill-university-sport-medicine-clinic-front-desk-receptionist"
+class="section level3">
+<h3>McGill University Sport Medicine Clinic — Front Desk
+Receptionist</h3>
+<p>12/2022 – 08/2024 · Montréal, Québec, Canada</p>
+<ul>
+<li>Coordinated scheduling for physiotherapists, doctors, surgeons,
+osteopaths, and massage therapists in a fast-paced, client-oriented
+atmosphere.<br />
+</li>
+<li>Helped organize varsity medical services.<br />
+</li>
+<li>Handled client payments and face-to-face interactions, phone calls,
+and patient questionnaires.<br />
+</li>
+<li>Skills: Organization, Administration, Customer Service, Teamwork,
+HIPAA</li>
+</ul>
+</div>
+<div id="mcgill-university-department-of-physics-team-member-phys102"
+class="section level3">
+<h3>McGill University — Department of Physics — TEAM Member,
+PHYS102</h3>
+<p>2022 – 2023 · Montréal, Québec, Canada</p>
+<ul>
+<li>Taught 15–20 student tutorial sessions that synthesized weekly
+course material through a multi-question problem set.<br />
+</li>
+<li>Presented at SALTISE 2022 about tutorial efficacy in large courses
+with Dr. Nik Provotas, Dr. Ken Ragan, and Rebecca Brosseau.<br />
+</li>
+<li>Worked under Dr. Nik Provotas.<br />
+</li>
+<li>Skills: Teaching, Physics (Electrophysics)</li>
+</ul>
+</div>
+<div
+id="mcgill-university-department-of-physiology-student-researcher-reza-sharif-lab-1"
+class="section level3">
+<h3>McGill University — Department of Physiology — Student Researcher,
+Reza Sharif Lab</h3>
+<p>06/2021 – 05/2023 · Montréal, Québec, Canada</p>
+<ul>
+<li>Conducted behavioural assays to study the role of TACAN ion channel
+in osteoarthritis pain.<br />
+</li>
+<li>Performed surgeries and dissections on mice.<br />
+</li>
+<li>Sliced and stained samples through immunohistochemistry.<br />
+</li>
+<li>Worked under Dr. Reza Sharif and Dr. Lise Rabiller.<br />
+</li>
+<li>Skills: Wet Lab, Mouse Handling, Behavioural Assays, Mouse
+Surgeries, Mouse Dissection</li>
+</ul>
+</div>
+<div id="schulich-school-of-music-of-mcgill-university-event-staffer"
+class="section level3">
+<h3>Schulich School of Music of McGill University — Event Staffer</h3>
+<p>06/2021 – 01/2023 · Montréal, Québec, Canada</p>
+<ul>
+<li>Worked with back-of-house staff to host concerts and events at SSoM
+halls.<br />
+</li>
+<li>Handled public-facing responsibilities such as ticket checks, coat
+checking, ushering, and accessibility.<br />
+</li>
+<li>Skills: Customer Service, Organization, Teamwork</li>
+</ul>
+</div>
+<div
+id="schulich-school-of-music-of-mcgill-university-communications-assistant"
+class="section level3">
+<h3>Schulich School of Music of McGill University — Communications
+Assistant</h3>
+<p>06/2021 – 05/2023 · Montréal, Québec, Canada</p>
+<ul>
+<li>Managed Instagram, Facebook, YouTube, and LinkedIn for SSoM.<br />
+</li>
+<li>Designed graphics for social media and brochures.<br />
+</li>
+<li>Wrote news and biographical articles for the SSoM website.<br />
+</li>
+<li>Updated SSoM website and calendars.<br />
+</li>
+<li>Skills: Graphic Design, Microsoft Office, Teamwork, Front-End Web
+Design, UX, Journalism, Social Media</li>
+</ul>
+</div>
+</div>
+<div id="awards" class="section level2">
+<h2>AWARDS</h2>
+<ul>
+<li>Columbia Public Health Scholar — Columbia University Mailman School
+of Public Health (2024)<br />
+Highest-level merit scholarship. Awarded for dedication to and past
+achievement in public health.</li>
+<li>Best Oral Presentation — Pharmacology Undergraduate Research Expo
+2024 — McGill Department of Pharmacology (2024)<br />
+“Challenges in Small Sample Size Cluster Randomized Trials focused on
+Medication Adherence in Pediatric Transplantation: Insights from the
+TAKE-IT-TOO Study”</li>
+<li>Undergraduate Student Research Award — Canadian Institute for Health
+Research (CIHR), McGill University (2024)<br />
+Funded Summer 2024 BioChoric project in the Reza Sharif Lab.</li>
+<li>Executive of the Year — Science Undergraduate Society of McGill
+University (2024)<br />
+VP Internal of PILS; won Best Social Event and Best Collaborative
+Event.</li>
+<li>National Japan Bowl Winner — Japan International Cooperation Centre
+(JICE) (2019)<br />
+2019 National Japan Bowl Winner in London, Ontario, Canada. Kakehashi
+delegate to Japan (Summer 2019).</li>
+</ul>
+</div>
+<div id="publications" class="section level2">
+<h2>PUBLICATIONS</h2>
+<ul>
+<li>Challenges in Small Sample Size Cluster Randomized Trials focused on
+Medication Adherence in Pediatric Transplantation: Insights from the
+TAKE-IT-TOO Study<br />
+Pediatric Transplantation — First draft accepted for revisions in
+September 2025.<br />
+Authors: Spencer W. Riddell, Robert Platt, Mary Amanda Dew, Annette
+DeVito Dabbs, Vikas R. Dharnidharka, Bärbel Knäuper, Gillian Mayersohn,
+Chia Wei Teoh, Véronique Phan, Tom Blydt-Hansen, Jodi Smith, Bethany J.
+Foster</li>
+</ul>
+</div>
+<div id="languages" class="section level2">
+<h2>LANGUAGES</h2>
+<ul>
+<li>English — Native</li>
+<li>French — Native</li>
+</ul>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
